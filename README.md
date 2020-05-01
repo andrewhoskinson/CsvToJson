@@ -3,10 +3,6 @@
 Version 1.1
 - Xml output now supported when using -c StronglyTyped command line option 
 
----------------------------------------------------------------------------------------
--- CSVToJson
--- Simple CSV file to Json converter
-
 -- This code implements multiple input and object creation options. It is intended to demonstrate
 -- OO principles and design.
 
@@ -23,8 +19,8 @@ Object creation options:
 
 Output options
 -------------------------
-  Json            			Outputs json. This is the default.
-  Xml             			Outputs Xml. This only works when using the StronglyTyped object creation option.
+	Json				Outputs json. This is the default.
+	Xml				Outputs Xml. This only works when using the StronglyTyped object creation option.
   
 Run the exe without parameters to see the help text for parameter specification.
 
