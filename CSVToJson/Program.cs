@@ -48,7 +48,7 @@ namespace CSVToJson
                 }
                 else
                 {
-                    CreatorFactory.Create<Person>(options.CreatorType)
+                    people = CreatorFactory.Create<Person>(options.CreatorType)
                         .GetObjects(ds);
                 }
                 var outputter = OutputFactory.Create<Person>(options.OutputType);
