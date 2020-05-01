@@ -41,7 +41,7 @@ namespace CSVToJson
 
                 dynamic people = null;
 
-                if (options.CreatorType == CreatorType.StronglyTyped)
+                if (options.OutputType == OutputType.Xml)
                 {
                     // Bit hacky this, but need to use strongly typed objects for Xml serialisation
                     people = CreatorFactory.Create<Person>(options.CreatorType)
