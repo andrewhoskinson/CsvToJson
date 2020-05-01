@@ -32,13 +32,16 @@ Sample usage:
 -------------
 
 csvtojson -i sample.csv
-							Reads in sample.csv, uses the NugetCSVFile input type and the dynamic creation option.
+
+Reads in sample.csv, uses the NugetCSVFile input type and the dynamic creation option.
 
 csvtojson -c StronglyTyped -t NaiveCSVFile -i sample.csv
-							Reads in sample.csv, uses the NaiveCSVFile input type and the strongly typed creation option. NB: The property names on the strongly type objects are in PROPER case so the json output is slightly different from the dynamic object creation option.
+
+Reads in sample.csv, uses the NaiveCSVFile input type and the strongly typed creation option. NB: The property names on the strongly type objects are in PROPER case so the json output is slightly different from the dynamic object creation option.
 
 csvtojson -t SqlServerDataSource -i "Server=ANDY-DELL\SQL2019DEV;Initial Catalog=JsonTest;Integrated Security=SSPI;"
-							Demonstrates dynamic object creation, reading data from a SQL server datasource. There are database scripts in the SampleData folder that creates 2 tables and a view, and the datasource is hard coded to do a select * from the view. 
+
+Demonstrates dynamic object creation, reading data from a SQL server datasource. There are database scripts in the SampleData folder that creates 2 tables and a view, and the datasource is hard coded to do a select * from the view. 
 
 Other stuff:
 ----------------------
@@ -46,6 +49,7 @@ Both object creation modes should (theoretically!) allow for an object hierarchy
 object creator. The file SampleData\another-sample.csv has content:
 
 name,properties_colour,properties_size_width,properties_size_height
+
 Ball,Red,10,10
 
 which when processed with
