@@ -26,7 +26,7 @@ namespace CSVToJson.Mapping
             {
                 var classMap = map.GetConstructor(Type.EmptyTypes).Invoke(null) as IClassMap;
 
-                // Check that the type has now already been registered
+                // Check that the type has not already been registered
                 if (MappedClasses.ContainsKey(classMap.MappedType))
                 {
                     throw new Exception("A ClassMap for " + classMap.MappedType.FullName + " has already been registered");
