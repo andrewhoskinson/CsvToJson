@@ -31,6 +31,7 @@ namespace CSVToJson
                 if (options.OutputType == OutputType.Xml)
                 {
                     Console.WriteLine("Error: Cannot use Xml output with dynamic object creation, add -c StronglyTyped to the command line arguments.");
+                    return;
                 }
             }
 
