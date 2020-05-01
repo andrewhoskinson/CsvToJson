@@ -18,14 +18,13 @@ Input types:
 
 Object creation options:
 ------------------------
-	Dynamic					Uses ExpandoObject to read the data in. This is the default.
-	StronglyTyped			Creates Person objects from the data. The Person/Address classes are in the Sample
-							namespace, demonstrates basic mappings using a simple syntax that should be familiar if 
-							you've used Fluent NHibernate
+	Dynamic				Uses ExpandoObject to read the data in. This is the default.
+	StronglyTyped			Creates Person objects from the data. The Person/Address classes are in the Sample namespace, demonstrates basic mappings using a simple syntax that should be familiar if you've used Fluent NHibernate
 
 Output options
-  Json            Outputs json. This is the default.
-  Xml             Outputs Xml. This only works when using the StronglyTyped object creation option.
+-------------------------
+  Json            			Outputs json. This is the default.
+  Xml             			Outputs Xml. This only works when using the StronglyTyped object creation option.
   
 Run the exe without parameters to see the help text for parameter specification.
 
@@ -36,14 +35,10 @@ csvtojson -i sample.csv
 							Reads in sample.csv, uses the NugetCSVFile input type and the dynamic creation option.
 
 csvtojson -c StronglyTyped -t NaiveCSVFile -i sample.csv
-							Reads in sample.csv, uses the NaiveCSVFile input type and the strongly typed creation option.
-							NB: The property names on the strongly type objects are in PROPER case so the json output is slightly
-							different from the dynamic object creation option.
+							Reads in sample.csv, uses the NaiveCSVFile input type and the strongly typed creation option. NB: The property names on the strongly type objects are in PROPER case so the json output is slightly different from the dynamic object creation option.
 
 csvtojson -t SqlServerDataSource -i "Server=ANDY-DELL\SQL2019DEV;Initial Catalog=JsonTest;Integrated Security=SSPI;"
-							Demonstrates dynamic object creation, reading data from a SQL server datasource. There are database scripts
-							in the SampleData folder that creates 2 tables and a view, and the datasource is hard coded to do a select * 
-							from the view. 
+							Demonstrates dynamic object creation, reading data from a SQL server datasource. There are database scripts in the SampleData folder that creates 2 tables and a view, and the datasource is hard coded to do a select * from the view. 
 
 Other stuff:
 ----------------------
