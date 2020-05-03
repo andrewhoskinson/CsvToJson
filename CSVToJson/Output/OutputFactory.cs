@@ -21,7 +21,7 @@ namespace CSVToJson.Output
                     return new JsonOutput();
 
                 case OutputType.Xml:
-                    return new XmlOutput<T>();
+                    return new ExpandoXmlOutput<T>();
             }
 
             throw new Exception("No implementation defined for " + outputType);

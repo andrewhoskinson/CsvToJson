@@ -26,14 +26,14 @@ namespace CSVToJson
                 // Register all the class maps in this assembly (Person and Address objects in Sample namespace)
                 MapRegistrar.Register(Assembly.GetExecutingAssembly());
             }
-            else
-            {
-                if (options.OutputType == OutputType.Xml)
-                {
-                    Console.WriteLine("Error: Cannot use Xml output with dynamic object creation, add -c StronglyTyped to the command line arguments.");
-                    return;
-                }
-            }
+            //else
+            //{
+            //    if (options.OutputType == OutputType.Xml)
+            //    {
+            //        Console.WriteLine("Error: Cannot use Xml output with dynamic object creation, add -c StronglyTyped to the command line arguments.");
+            //        return;
+            //    }
+            //}
 
             using (IDataSource ds = DataSourceFactory.Create(options.DataSourceType))
             {
@@ -41,17 +41,21 @@ namespace CSVToJson
 
                 dynamic people = null;
 
-                if (options.OutputType == OutputType.Xml)
-                {
-                    // Bit hacky this, but need to use strongly typed objects for Xml serialisation
-                    people = CreatorFactory.Create<Person>(options.CreatorType)
-                        .GetObjects(ds).Cast<Person>().ToArray();                        
-                }
-                else
-                {
-                    people = CreatorFactory.Create<Person>(options.CreatorType)
+                //if (options.OutputType == OutputType.Xml)
+                //{
+                //    // Bit hacky this, but need to use strongly typed objects for Xml serialisation
+                //    people = CreatorFactory.Create<Person>(options.CreatorType)
+                //        .GetObjects(ds).Cast<Person>().ToArray();                        
+                //}
+                //else
+                //{
+                //    people = CreatorFactory.Create<Person>(options.CreatorType)
+                //        .GetObjects(ds);
+                //}
+
+                people = CreatorFactory.Create<Person>(options.CreatorType)
                         .GetObjects(ds);
-                }
+
                 var outputter = OutputFactory.Create<Person>(options.OutputType);
 
                 Console.WriteLine(outputter.Output(people));
